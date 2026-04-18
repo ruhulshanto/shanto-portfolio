@@ -1,0 +1,400 @@
+/* ---------- Navbar Premium Professional Glassmorphism Design ---------- */
+
+/* Top Navbar (Default) */
+.premium-top-navbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 9999;
+    padding: 1.5rem 0;
+    /* Clean backdrop since it's the top */
+    background: transparent;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Brand Section */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 10;
+}
+
+.brand-text {
+    font-size: 1.25rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    letter-spacing: -0.5px;
+}
+
+/* Top Navigation Links */
+.navbar-links {
+    display: none; 
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.7);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    padding: 0.4rem;
+    border-radius: 100px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+}
+
+.dark .navbar-links {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 768px) {
+    .navbar-links {
+        display: flex;
+    }
+}
+
+.nav-item {
+    position: relative;
+    padding: 0.6rem 1.25rem;
+    border-radius: 100px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.nav-item-content {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    position: relative;
+    z-index: 2;
+    color: var(--text-secondary, #64748b);
+    font-weight: 500;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.dark .nav-item-content {
+    color: #94a3b8;
+}
+
+.nav-item:hover .nav-item-content {
+    color: var(--primary, #2563eb);
+}
+
+.dark .nav-item:hover .nav-item-content {
+    color: #60a5fa;
+}
+
+.nav-item.active .nav-item-content {
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Active State indicator matches side active state */
+.active-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    border-radius: 100px;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+/* Top / Mobile Actions */
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.theme-toggle-btn {
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #64748b;
+    backdrop-filter: blur(8px);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.dark .theme-toggle-btn {
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    color: #e2e8f0;
+}
+
+.theme-toggle-btn:hover {
+    transform: rotate(15deg) scale(1.05);
+    color: #2563eb;
+    border-color: rgba(37, 99, 235, 0.2);
+}
+
+.dark .theme-toggle-btn:hover {
+    color: #fbbf24;
+    border-color: rgba(251, 191, 36, 0.2);
+}
+
+/* ------------------------------------------- */
+/* Side Navbar (When Scrolled)                 */
+/* ------------------------------------------- */
+
+.premium-side-navbar {
+    position: fixed;
+    top: 50%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 9999;
+}
+
+.side-navbar-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.6rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.6rem;
+    border-radius: 100px;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.dark .side-navbar-content {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Hide on very small screens, let mobile map handling it */
+@media (max-width: 767px) {
+    .premium-side-navbar {
+        display: none;
+    }
+}
+
+.side-nav-item {
+    position: relative;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.side-nav-item-content {
+    position: relative;
+    z-index: 2;
+    color: var(--text-secondary, #64748b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.3s ease;
+}
+
+.dark .side-nav-item-content {
+    color: #94a3b8;
+}
+
+.side-nav-item:hover .side-nav-item-content {
+    color: var(--primary, #2563eb);
+}
+
+.dark .side-nav-item:hover .side-nav-item-content {
+    color: #60a5fa;
+}
+
+.side-nav-item.active .side-nav-item-content {
+    color: #ffffff;
+}
+
+.side-active-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.35);
+}
+
+.side-divider {
+    width: 24px;
+    height: 1px;
+    background: rgba(0, 0, 0, 0.1);
+    margin: 0.25rem 0;
+}
+
+.dark .side-divider {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.side-theme-toggle {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    color: #64748b;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.dark .side-theme-toggle {
+    color: #94a3b8;
+}
+
+.side-theme-toggle:hover {
+    color: #2563eb;
+    transform: rotate(15deg) scale(1.1);
+}
+
+.dark .side-theme-toggle:hover {
+    color: #fbbf24;
+}
+
+/* ------------------------------------------- */
+/* Mobile Elements                             */
+/* ------------------------------------------- */
+
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    color: #1e293b;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+}
+
+.dark .mobile-menu-btn {
+    color: #f8fafc;
+    background: rgba(30, 41, 59, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+@media (max-width: 767px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+}
+
+.mobile-scrolled-actions {
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 9998;
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .mobile-scrolled-actions {
+        display: flex;
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 5.5rem;
+    left: 1rem;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 1rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+    z-index: 9998;
+}
+
+.mobile-menu.scrolled {
+    top: 4.5rem;
+}
+
+.dark .mobile-menu {
+    background: rgba(15, 23, 42, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.mobile-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 12px;
+    color: #64748b;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dark .mobile-nav-item {
+    color: #94a3b8;
+}
+
+.mobile-nav-item:hover {
+    background: rgba(37, 99, 235, 0.05);
+    color: #2563eb;
+}
+
+.dark .mobile-nav-item:hover {
+    background: rgba(37, 99, 235, 0.1);
+    color: #60a5fa;
+}
+
+.mobile-nav-item.active {
+    background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+    color: #ffffff;
+}
+
+.dark .mobile-nav-item.active {
+    color: #ffffff;
+}
