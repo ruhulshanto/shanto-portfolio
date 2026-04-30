@@ -105,9 +105,9 @@ const Navbar = ({ isDarkMode, setIsDarkMode, activeSection, scrollToSection }) =
                 {isScrolled && (
                     <motion.nav 
                         className={`premium-side-navbar ${isDarkMode ? 'dark' : ''}`}
-                        initial={{ x: -100, opacity: 0, scale: 0.8 }}
-                        animate={{ x: 0, opacity: 1, scale: 1 }}
-                        exit={{ x: -100, opacity: 0, scale: 0.8 }}
+                        initial={{ x: -100, y: "-50%", opacity: 0, scale: 0.8 }}
+                        animate={{ x: 0, y: "-50%", opacity: 1, scale: 1 }}
+                        exit={{ x: -100, y: "-50%", opacity: 0, scale: 0.8 }}
                         transition={{ type: "spring", stiffness: 260, damping: 20 }}
                     >
                         <div className="side-navbar-content">

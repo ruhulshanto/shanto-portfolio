@@ -79,7 +79,7 @@ h1, h2, h3, h4, h5, h6 {
 .section-line {
     width: 60px;
     height: 4px;
-    background: var(--gradient);
+    background: var(--primary);
     margin: 0 auto;
     border-radius: 2px;
 }
